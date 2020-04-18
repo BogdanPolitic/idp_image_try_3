@@ -1,0 +1,29 @@
+version: "3"
+services:
+    web:
+        image: bogdanpolitic/idp:try_17_04
+        deploy:
+            replicas: 4
+            resources:
+                limits:
+                    cpus: "0.2"
+                    memory: 50M
+            restart_policy:
+                condition: on-failure
+        ports:
+           - "8888:5000"
+        volumes:
+            - "~/my_dir/data:/data"
+        networks:
+          - webnet
+    visualizer:
+        image: dockersamples/visualizer:stable
+        ports:
+            - "8080:8080"
+        deploy:
+            placement:
+                constraints: [node.role == manager]
+        networks:
+            - webnet
+networks:
+    webnet:
