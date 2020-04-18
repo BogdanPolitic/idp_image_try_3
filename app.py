@@ -39,15 +39,15 @@ def date_greater_or_equal(arg_date, ref_date):
 def indexx():
  url = random.choice(images)
  
- f = open("/data/test.txt", "r")
+ f = open("/mnt/sda1/var/lib/docker/volumes/my_vol_4/_data/test1.txt", "r")
  first_5 = "d";
  if f != None:
   first_5 = f.read(5)
-  filesize = os.path.getsize("/data/test.txt")
+  filesize = os.path.getsize("/mnt/sda1/var/lib/docker/volumes/my_vol_4/_data/test1.txt")
   first_5 = str(filesize)
   f.close()
   
- f = open("/data/test.txt", "a")
+ f = open("/mnt/sda1/var/lib/docker/volumes/my_vol_4/_data/test1.txt", "a")
  if f != None:
   f.write("MY MOTHERRRR")
   f.close()
