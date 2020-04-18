@@ -13,7 +13,7 @@ services:
         ports:
            - "8888:5000"
         volumes:
-            - "~/my_dir/data:/data"
+            - "my_vol_4:/data"
         networks:
           - webnet
     visualizer:
