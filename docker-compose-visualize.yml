@@ -13,7 +13,7 @@ services:
         ports:
            - "8888:5000"
         volumes:
-            - "my_vol_4:/data"
+            - "/mnt/sda1/var/lib/docker/volumes/my_vol_4/_data:/data"
         networks:
           - webnet
     visualizer:
